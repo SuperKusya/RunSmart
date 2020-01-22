@@ -1,0 +1,19 @@
+.consultation {
+    color: #fff;
+    background: url(../../img/bg/bg2.jpg) (center/cover) no-repeat;
+    padding: 100px 0;
+    text-align: left;
+    min-height: 680px;
+
+    &__offer {
+        font-size: 36px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        font-weight: 700;
+        margin-bottom: 80px;
+    }
+
+    &__descr {
+        margin-bottom: 36px;
+    }
+}

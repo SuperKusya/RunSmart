@@ -4,8 +4,22 @@
     font-family: 'Museo Sans Cyrl';
 }
 
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
 body {
     margin: 0;
+}
+
+main {
+    display: block;
 }
 
 .container {
@@ -16,3 +30,7 @@ body {
 @import 'blocks/promo';
 @import 'blocks/header';
 @import 'blocks/buttons';
+@import 'blocks/advantages';
+@import 'blocks/section-heading';
+@import 'blocks/consultation';
+@import 'blocks/forms';
