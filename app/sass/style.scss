@@ -15,6 +15,7 @@
 }
 
 body {
+    color: #0d0d0d;
     margin: 0;
 }
 
@@ -23,6 +24,7 @@ main {
 }
 
 .container {
+    position: relative;
     max-width: 950px;
     margin: 0 auto;
 }
@@ -34,3 +36,7 @@ main {
 @import 'blocks/section-heading';
 @import 'blocks/consultation';
 @import 'blocks/forms';
+@import 'blocks/carousel';
+@import 'blocks/catalog';
+@import 'blocks/reviews';
+@import 'blocks/footer';

@@ -53,12 +53,12 @@ function svg() {
 }
 
 
-function js() {
-    return src(path.app.js)
-        .pipe(concat('all.js'))
-        .pipe(terser())
-        .pipe(dest(path.dist.js));
-}
+// function js() {
+//     return src(path.app.js)
+//         .pipe(concat('all.js'))
+//         .pipe(terser())
+//         .pipe(dest(path.dist.js));
+// }
 
 async function clean() {
     return del.sync(path.clean);
@@ -94,6 +94,10 @@ function html() {
 
 function fonts() {
     return src(path.app.fonts).pipe(dest(path.dist.fonts));
+}
+
+function js() {
+    return src(path.app.js).pipe(dest(path.dist.js));
 }
 
 
