@@ -25,7 +25,6 @@ const path = {
         img: 'dist/img/',
         icons: 'dist/icons/',
         fonts: 'dist/fonts',
-        mailer: 'dist/mailer'
     },
     app: {
         html: ['app/*.html', 'app/*.ico'],
@@ -34,7 +33,6 @@ const path = {
         img: 'app/img/**/*.*',
         icons: 'app/icons/**/*.svg',
         fonts: 'app/fonts/**/*.*',
-        mailer: 'dist/mailer/**/*.*'
 
     },
     clean: './dist/',
@@ -128,14 +126,6 @@ function svg() {
         .pipe(dest(path.dist.icons));
 }
 
-
-// function js() {
-//     return src(path.app.js)
-//         .pipe(concat('all.js'))
-//         .pipe(terser())
-//         .pipe(dest(path.dist.js));
-// }
-
 async function clean() {
     return del.sync(path.clean);
 }
@@ -148,16 +138,11 @@ function js() {
     return src(path.app.js).pipe(dest(path.dist.js));
 }
 
-function mailer() {
-    return src(path.app.mailer).pipe(dest(path.dist.mailer));
-}
-
-
 function deploy() {
     return src(path.deploy)
         .pipe(ghPages());
 }
 
-exports.build = series(clean, parallel(html, styles, fonts, images, svg, js, mailer));
+exports.build = series(clean, parallel(html, styles, fonts, images, svg, js));
 exports.default = series(exports.build, parallel(look, server));
 exports.deploy = series(exports.build, deploy);
