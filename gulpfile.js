@@ -6,6 +6,7 @@ const {
     series
 } = require('gulp');
 const browserSync = require("browser-sync");
+const htmlmin = require('gulp-htmlmin');
 const sass = require("gulp-sass");
 const rename = require("gulp-rename");
 const autoprefixer = require("gulp-autoprefixer");
@@ -13,93 +14,32 @@ const cleanCSS = require("gulp-clean-css");
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const del = require('del');
-const terser = require('gulp-terser');
-const concat = require('gulp-concat');
 const ghPages = require('gulp-gh-pages-with-updated-gift');
 const svgSprite = require('gulp-svg-sprite');
 
 const path = {
     dist: {
         html: 'dist/',
-        js: 'dist/js/',
         css: 'dist/css/',
+        js: 'dist/js/',
         img: 'dist/img/',
         icons: 'dist/icons/',
-        fonts: 'dist/fonts'
+        fonts: 'dist/fonts',
+        mailer: 'dist/mailer'
     },
     app: {
         html: ['app/*.html', 'app/*.ico'],
+        scss: 'app/sass/**/*.+(scss|sass|css)',
         js: 'app/js/*.js',
-        scss: 'app/sass/**/*.+(scss|sass)',
-        css: 'app/css/*.css',
         img: 'app/img/**/*.*',
         icons: 'app/icons/**/*.svg',
-        fonts: 'app/fonts/**/*.*'
+        fonts: 'app/fonts/**/*.*',
+        mailer: 'dist/mailer/**/*.*'
+
     },
     clean: './dist/',
     deploy: 'dist/**/*'
 }
-
-function svg() {
-    return src(path.app.icons)
-        .pipe(svgSprite({
-            mode: {
-                stack: {
-                    sprite: "../sprite.svg"
-                }
-            },
-        }))
-        .pipe(dest(path.dist.icons));
-}
-
-
-// function js() {
-//     return src(path.app.js)
-//         .pipe(concat('all.js'))
-//         .pipe(terser())
-//         .pipe(dest(path.dist.js));
-// }
-
-async function clean() {
-    return del.sync(path.clean);
-}
-
-function images() {
-    return src(path.app.img).pipe(cache(imagemin([
-            imagemin.gifsicle({
-                interlaced: true
-            }),
-            imagemin.jpegtran({
-                progressive: true
-            }),
-            imagemin.optipng({
-                optimizationLevel: 5
-            }),
-            imagemin.svgo({
-                plugins: [{
-                        removeViewBox: true
-                    },
-                    {
-                        cleanupIDs: false
-                    }
-                ]
-            })
-        ])))
-        .pipe(dest(path.dist.img));
-}
-
-function html() {
-    return src(path.app.html).pipe(dest(path.dist.html));
-}
-
-function fonts() {
-    return src(path.app.fonts).pipe(dest(path.dist.fonts));
-}
-
-function js() {
-    return src(path.app.js).pipe(dest(path.dist.js));
-}
-
 
 function server() {
     browserSync.init({
@@ -109,9 +49,19 @@ function server() {
     });
 }
 
+function html() {
+    return src(path.app.html)
+        .pipe(
+            htmlmin({ 
+                collapseWhitespace: true 
+            })
+        )
+        .pipe(dest(path.dist.html));
+}
 
 function styles() {
-    return src(path.app.scss).pipe(
+    return src(path.app.scss)
+        .pipe(
             sass({
                 outputStyle: "compressed"
             }).on("error", sass.logError)
@@ -142,11 +92,72 @@ function look() {
     watch(path.app.html).on("change", series(html, browserSync.reload));
 }
 
+function images() {
+    return src(path.app.img).pipe(cache(imagemin([
+            imagemin.gifsicle({
+                interlaced: true
+            }),
+            imagemin.jpegtran({
+                progressive: true
+            }),
+            imagemin.optipng({
+                optimizationLevel: 5
+            }),
+            imagemin.svgo({
+                plugins: [{
+                        removeViewBox: true
+                    },
+                    {
+                        cleanupIDs: false
+                    }
+                ]
+            })
+        ])))
+        .pipe(dest(path.dist.img));
+}
+
+function svg() {
+    return src(path.app.icons)
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg"
+                }
+            },
+        }))
+        .pipe(dest(path.dist.icons));
+}
+
+
+// function js() {
+//     return src(path.app.js)
+//         .pipe(concat('all.js'))
+//         .pipe(terser())
+//         .pipe(dest(path.dist.js));
+// }
+
+async function clean() {
+    return del.sync(path.clean);
+}
+
+function fonts() {
+    return src(path.app.fonts).pipe(dest(path.dist.fonts));
+}
+
+function js() {
+    return src(path.app.js).pipe(dest(path.dist.js));
+}
+
+function mailer() {
+    return src(path.app.mailer).pipe(dest(path.dist.mailer));
+}
+
+
 function deploy() {
     return src(path.deploy)
         .pipe(ghPages());
 }
 
-exports.build = series(clean, parallel(styles, fonts, images, svg, js, html));
+exports.build = series(clean, parallel(html, styles, fonts, images, svg, js, mailer));
 exports.default = series(exports.build, parallel(look, server));
 exports.deploy = series(exports.build, deploy);
