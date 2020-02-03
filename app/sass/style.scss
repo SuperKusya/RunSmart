@@ -1,4 +1,9 @@
+@import 'libs/fonts';
+@import 'libs/slick';
+@import 'libs/animate';
+
 @import 'base/variables';
+@import 'base/animations';
 
 * {
     font-family: 'Museo Sans Cyrl';
@@ -40,3 +45,5 @@ main {
 @import 'blocks/catalog';
 @import 'blocks/reviews';
 @import 'blocks/footer';
+@import 'blocks/modal';
+@import 'blocks/pageup';

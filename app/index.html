@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./css/fonts.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="stylesheet" href="./css/slick.min.css"/> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css"
     />
-    <link rel="stylesheet" href="./css/style.min.css" />
+    <link rel="stylesheet" href="./css/style.min.css">
 
-    <title>RunSmart</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#c70101">
+    <meta name="msapplication-TileColor" content="#c70101">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="RunSmart" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:locale" content="ru_RU">
+    <meta name="description" content="">
+
+
+
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+
+    <title>RunSmart - интернет-магазин пульсометров</title>
   </head>
   <body>
-    <section class="promo">
+    <section class="promo" id="up">
       <div class="container">
         <header class="header">
           <a href="/" class="header__logo">
-            <img src="./img/logo.png" alt="logo" />
+            <img src="./img/logo.png" alt="logo">
           </a>
           <div class="header__official">
             Официальный представитель
@@ -27,7 +46,7 @@
           </div>
           <div class="header__contacts">
             <a class="header__phone" href="+74999228974">+7 (499) 922-89-74 </a>
-            <button class="btn">заказать звонок</button>
+            <button data-modal="consultation" class="btn">заказать звонок</button>
           </div>
         </header>
 
@@ -39,19 +58,19 @@
 
           <div class="promo__icons">
             <div class="promo__icon">
-              <img src="./img/icons/timer.png" alt="icon timer" />
+              <img src="./img/icons/timer.png" alt="icon timer">
               Время подбора: 10 минут
             </div>
             <div class="promo__icon">
-              <img src="./img/icons/hand-cart.png" alt="icon hand-cart" />
+              <img src="./img/icons/hand-cart.png" alt="icon hand-cart">
               Бесплатная доставка
             </div>
             <div class="promo__icon">
-              <img src="./img/icons/messages.png" alt="icon messages" />
+              <img src="./img/icons/messages.png" alt="icon messages">
               Ответим на все вопросы
             </div>
           </div>
-          <button class="btn btn_main">заказать констультацию</button>
+          <button data-modal="consultation" class="btn btn_main">заказать констультацию</button>
           <div class="promo__link">
             или
             <a href="#">перейти в каталог</a>
@@ -69,7 +88,7 @@
               class="advantages__icon"
               src="./img/advantages/cup.png"
               alt="icon cup"
-            />
+            >
             <h3 class="advantages__title">Делимся опытом</h3>
             <div class="advantages__text">
               Наши сотрудники всегда готовы поделиться своим опытом, так как
@@ -79,7 +98,7 @@
           </div>
           <div class="advantages__item">
             <img
-              class="advantages__icon"
+              class="advantages__icon advantages__icon_animated"
               src="./img/advantages/heartbeat.png"
               alt="icon heartbeat"
             />
@@ -118,16 +137,16 @@
           <br />
           и мы перезвоним вам в течении 10 минут
         </div>
-        <form class="feed-form" action="#">
-          <input name="name" required placeholder="Ваше имя" type="text" />
-          <input name="phone" required placeholder="Ваше телефон" type="tel" />
-          <input name="email" required placeholder="Ваше E-mail" type="email" />
+        <form id="consultation-form" class="feed-form" action="#">
+          <input name="name" placeholder="Ваше имя" type="text" />
+          <input name="phone" placeholder="Ваше телефон"/>
+          <input name="email" placeholder="Ваше E-mail" type="email" />
 
           <button class="btn btn_submit">заказать констультацию</button>
         </form>
       </div>
     </section>
-    <section class="carousel">
+    <div class="carousel">
       <div class="container">
         <div class="carousel__inner">
           <div><img src="./img/slider/slide-1.png" alt="polar" /></div>
@@ -142,7 +161,7 @@
           <img src="../img/arrow-right.png" />
         </button>
       </div>
-    </section>
+    </div>
 
     <section class="catalog">
       <div class="container">
@@ -216,7 +235,7 @@
                   class="catalog-item__img"
                 />
                 <div class="catalog-item__title">
-                  Пульсометр Polar FT1
+                  Пульсометр Suunto M2
                 </div>
                 <div class="catalog-item__descr">
                   Пульсометр начального уровня с комфортным тканевым ремешком
@@ -357,7 +376,7 @@
                   class="catalog-item__img"
                 />
                 <div class="catalog-item__title">
-                  Пульсометр Polar FT1
+                  Пульсометр Suunto M2
                 </div>
                 <div class="catalog-item__descr">
                   Пульсометр начального уровня с комфортным тканевым ремешком
@@ -593,8 +612,8 @@
     <section class="reviews">
       <div class="container">
         <h2 class="section-heading">Отзывы клиентов</h2>
-        <div class="reviews__list">
-          <div class="reviews-item">
+        <div class="reviews__list ">
+          <div class="reviews-item fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
             <div class="reviews-item__photo">
               <img src="./img/user-photos/user-photo-1.png" alt="">
             </div>
@@ -611,7 +630,7 @@
               </div>
             </div>
           </div>
-          <div class="reviews-item">
+          <div class="reviews-item fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
             <div class="reviews-item__photo">
               <img src="./img/user-photos/user-photo-1.png" alt="">
             </div>
@@ -628,7 +647,7 @@
               </div>
             </div>
           </div>
-          <div class="reviews-item">
+          <div class="reviews-item fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
             <div class="reviews-item__photo">
               <img src="./img/user-photos/user-photo-1.png" alt="">
             </div>
@@ -654,14 +673,68 @@
         <address class="footer__addr">Москва, Мясницкий проезд, д.3с1</address>
         <a class="footer__phone" href="tel:8499228974">8499228974</a>
         <div class="footer__social">
-          <a href="#" class="footer__social-item"><img src="" alt="facebook"></a>
-          <a href="#" class="footer__social-item"><img src="" alt="instagram"></a>
-          <a href="#" class="footer__social-item"><img src="" alt="pinteres"></a>
+          <a href="#" class="footer__social-item">
+            <svg class="img">
+              <use xlink:href="./icons/sprite.svg#facebook"></use>
+            </svg>
+          </a>
+          <a href="#" class="footer__social-item"> 
+            <svg class="img">
+            <use xlink:href="./icons/sprite.svg#instagram"></use>
+            </svg>
+          </a>
+          <a href="#" class="footer__social-item">
+            <svg class="img">
+              <use xlink:href="./icons/sprite.svg#facebook"></use>
+            </svg>
+          </a>
         </div>
       </div>
     </footer>
+
+    <div class="overlay">
+      <div class="modal" id="consultation">
+        <div class="modal__close">&times;</div>
+        <div class="modal__subtitle">Просто заполните форму заявки</div>
+        <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
+          <form class="feed-form" action="#">
+            <input name="name" placeholder="Ваше имя" type="text">
+            <input name="phone" placeholder="Ваше телефон">
+            <input name="email" placeholder="Ваше E-mail" type="email">
+  
+            <button class="btn btn_submit">заказать констультацию</button>
+          </form>
+      </div>
+      <div class="modal" id="order">
+        <div class="modal__close">&times;</div>
+        <div class="modal__subtitle">Ваш заказ:</div>
+        <div class="modal__descr">Пульсометр Polar FT1</div>
+          <form class="feed-form" action="#">
+            <input name="name" placeholder="Ваше имя" type="text" />
+            <input name="phone" placeholder="Ваше телефон"/>
+            <input name="email" placeholder="Ваше E-mail" type="email" />
+  
+            <button class="btn btn_submit">купить</button>
+          </form>
+      </div>
+      <div class="modal modal_mini" id="thanks">
+        <div class="modal__close">&times;</div>
+        <div class="modal__subtitle">Спасибо за вашу заявку! </div>
+        <div class="modal__descr">
+          Наш менеджер свяжется с вами в ближайшее время!
+        </div>
+      </div>
+    </div>
+
+    <a href="#up" class="pageup">
+      <img src="./img/circle-up.svg" alt="up" >
+    </a>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/jquery.maskedinput.min.js"></script>
+    <script src="./js/wow.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
