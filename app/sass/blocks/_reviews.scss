@@ -1,8 +1,7 @@
 .reviews {
-    padding-bottom: 70px;
+    padding: 52px 10px 70px;
     &-item {
         display: flex;
-        // flex-direction: column;
         position: relative;
         padding-bottom: 50px;
         margin-top: 50px;
@@ -43,4 +42,23 @@
         }
 
     }
+}
+
+@media (max-width: 600px) {
+    .reviews {
+        padding: 52px 30px 70px;
+        &-item {
+            flex-direction: column;
+
+            &__name {
+                margin-top: 15px;
+            }
+
+            &__photo {
+                margin-right: 0;
+                img {max-width: 40%;}
+            }
+        }
+    }
+    
 }

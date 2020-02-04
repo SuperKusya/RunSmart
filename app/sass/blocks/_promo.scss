@@ -68,3 +68,12 @@
         }
     }
 }
+
+@media (max-width: 1000px) {
+    .promo {
+        &__wrapper {
+            align-items: center;
+        }
+    }
+
+}

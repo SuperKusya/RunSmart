@@ -1,6 +1,7 @@
 @import 'libs/fonts';
-@import 'libs/slick';
 @import 'libs/animate';
+@import 'libs/_slick-theme';
+@import 'libs/slick';
 
 @import 'base/variables';
 @import 'base/animations';
@@ -22,6 +23,7 @@
 body {
     color: #0d0d0d;
     margin: 0;
+    line-height: 1.2;
 }
 
 main {

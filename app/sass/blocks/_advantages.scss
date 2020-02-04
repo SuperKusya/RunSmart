@@ -1,7 +1,6 @@
 .advantages {
-    padding: 70px 0 100px 0;
+    padding: 70px 10px 100px;
     line-height: 1.2;
-    color: #0d0d0d;
     background-color: #f6f6f6;
 
     &__list {
@@ -44,4 +43,28 @@
         }
     }
     
+}
+
+@media (max-width: 780px) {
+    .advantages {
+        &__list {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        &__item {
+            margin-bottom: 50px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__title {
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+    }
 }

@@ -55,3 +55,14 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 600px) {
+    .footer {
+        &__info {
+            top: 0;
+            left: 50%;
+            width: 100%;
+        }
+    }
+
+}

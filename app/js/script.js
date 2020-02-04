@@ -1,20 +1,20 @@
 $(document).ready(function() {
     // SLIDER
 
-    const slider = tns({
-        container: '.carousel__inner',
-        items: 1,
-        slideBy: 'page',
-        controls: false,
-        nav: false,
-    });
-    
-    document.querySelector('.prev').addEventListener('click', function () {
-        slider.goTo('prev');
-    });
-    
-    document.querySelector('.next').addEventListener('click', function () {
-        slider.goTo('next');
+    $('.carousel__inner').slick({
+        speed: 1200,
+        adaptiveHeight: true,
+        prevArrow: '<button type="button" class="slick-prev"><img src="img/arrow-left.png"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="img/arrow-right.png"></button>',
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    dots: true,
+                    arrows: false,
+                }
+            }
+        ]
     });
 
     // TABS
