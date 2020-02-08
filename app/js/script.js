@@ -4,8 +4,8 @@ $(document).ready(function() {
     $('.carousel__inner').slick({
         speed: 1200,
         adaptiveHeight: true,
-        prevArrow: '<button type="button" class="slick-prev"><img src="img/arrow-left.png"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="img/arrow-right.png"></button>',
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="./icons/sprite.svg#arrow"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="./icons/sprite.svg#arrow"></use></svg></button>',
         responsive: [
             {
                 breakpoint: 1000,
@@ -30,13 +30,12 @@ $(document).ready(function() {
         $(item).each(function(i) {
             $(this).on('click', function(e) {
                 e.preventDefault();
-                $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
+                $('.catalog-item__content').eq(Math.floor(i/2)).toggleClass('catalog-item__content_active');
+                $('.catalog-item__list').eq(Math.floor(i/2)).toggleClass('catalog-item__list_active');
             })
         });
     }
     toogleSlide('.catalog-item__link');
-    // toogleSlide('.catalog-item__back');
 
 
     // MODAL
@@ -102,7 +101,12 @@ $(document).ready(function() {
     });
 
     // Smooth scroll for animations 
-    new WOW().init();
+    new WOW(
+        {
+            mobile: false,
+        }
+      ).init();
+
 });
 
 
