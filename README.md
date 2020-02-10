@@ -8,4 +8,4 @@ I created responsive HTML layout with:
 
 HTML/CSS/JS/jQuery. Used Gulp for building.
 
-![Screenshot](https://imgur.com/wgnvhq5)
+![Screenshot](https://i.imgur.com/wgnvhq5.jpg)
