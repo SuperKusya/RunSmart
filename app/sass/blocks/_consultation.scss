@@ -44,6 +44,11 @@
       align-items: center;
     }
 
+    &__wrapper > * {
+      max-width: 100%;
+    }
+
+
     &__offer {
       text-align: center;
     }

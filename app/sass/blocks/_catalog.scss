@@ -14,7 +14,7 @@
   }
 
   &__tab {
-    flex: 0 1 200px;
+    width: 200px;
     margin: 0 5px;
     padding: 12px 0;
 
@@ -232,8 +232,6 @@
     }
 
     &__tab {
-      flex-basis: 0;
-      width: 200px;
       margin-bottom: 10px;
 
       font-size: 14px;

@@ -2,19 +2,10 @@
   padding: 108px 10px 54px;
 
 
-  .slick-slide {
-    display: flex;
-    align-items: center;
-  }
-
   .slick-dots {
     button::before {
       font-size: 20px;
     }
-  }
-
-  .container {
-    height: 100%;
   }
 
   &__inner {
