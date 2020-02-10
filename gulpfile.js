@@ -54,7 +54,8 @@ function html() {
                 collapseWhitespace: true 
             })
         )
-        .pipe(dest(path.dist.html));
+        .pipe(dest(path.dist.html)
+    );
 }
 
 function styles() {
