@@ -4,11 +4,11 @@ $(document).ready(function() {
     $('.carousel__inner').slick({
         speed: 1200,
         adaptiveHeight: true,
-        prevArrow: '<button type="button" class="slick-prev"><img src="img/arrow-left.png"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="img/arrow-right.png"></button>',
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="./icons/sprite.svg#arrow"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="./icons/sprite.svg#arrow"></use></svg></button>',
         responsive: [
             {
-                breakpoint: 1000,
+                breakpoint: 900,
                 settings: {
                     dots: true,
                     arrows: false,
@@ -60,7 +60,10 @@ $(document).ready(function() {
         $(form).validate({
             rules: {
                 name: 'required',
-                phone: 'required',
+                phone: {
+                    required: true,
+                    digits: true
+                },
                 email: {
                     required: true,
                     email: true
@@ -83,7 +86,7 @@ $(document).ready(function() {
 
     // VALIDATE PHONE
 
-    $('input[name=phone]').mask("+7(999) 999-99-99");
+    // $('input[name=phone]').mask("+7(999) 999-99-99");
 
     // Smooth scroll and page-up
     $(window).scroll(function() {
