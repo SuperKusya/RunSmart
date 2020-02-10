@@ -98,11 +98,15 @@
       font-size: 14px;
     }
 
-    &__link {
+    &__toggle {
       font-weight: 500;
       font-size: 14px;
       color: $main-color;
       text-transform: uppercase;
+      text-decoration: underline;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
 
       text-decoration-skip-ink: none;
     }
@@ -251,7 +255,6 @@
     }
   }
 }
-
 
 @media (max-width: 350px) {
   .catalog {
