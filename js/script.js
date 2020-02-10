@@ -35,7 +35,7 @@ $(document).ready(function() {
             })
         });
     }
-    toogleSlide('.catalog-item__link');
+    toogleSlide('.catalog-item__toggle');
 
 
     // MODAL
