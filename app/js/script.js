@@ -8,7 +8,7 @@ $(document).ready(function() {
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="./icons/sprite.svg#arrow"></use></svg></button>',
         responsive: [
             {
-                breakpoint: 1000,
+                breakpoint: 900,
                 settings: {
                     dots: true,
                     arrows: false,
@@ -60,7 +60,10 @@ $(document).ready(function() {
         $(form).validate({
             rules: {
                 name: 'required',
-                phone: 'required',
+                phone: {
+                    required: true,
+                    digits: true
+                },
                 email: {
                     required: true,
                     email: true

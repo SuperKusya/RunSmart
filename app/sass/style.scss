@@ -1,17 +1,13 @@
-@import 'libs/fonts';
-@import 'libs/animate';
-@import 'libs/_slick-theme';
-@import 'libs/slick';
+@import "libs/fonts";
+@import "libs/animate";
+@import "libs/_slick-theme";
+@import "libs/slick";
 
-@import 'base/variables';
-@import 'base/animations';
+@import "base/variables";
+@import "base/animations";
 
 * {
-    font-family: 'Museo Sans Cyrl';
-}
-
-:root {
-    box-sizing: border-box;
+  font-family: "Museo Sans Cyrl";
 }
 
 *,
@@ -20,32 +16,44 @@
   box-sizing: inherit;
 }
 
+:root {
+  box-sizing: border-box;
+}
+
+
+
 body {
-    color: #0d0d0d;
-    margin: 0;
-    line-height: 1.2;
+  margin: 0;
+
+  color: #0d0d0d;
 }
 
 main {
-    display: block;
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
-    position: relative;
-    max-width: 950px;
-    margin: 0 auto;
+  position: relative;
+
+  max-width: 950px;
+  margin: 0 auto;
 }
 
-@import 'blocks/promo';
-@import 'blocks/header';
-@import 'blocks/buttons';
-@import 'blocks/advantages';
-@import 'blocks/section-heading';
-@import 'blocks/consultation';
-@import 'blocks/forms';
-@import 'blocks/carousel';
-@import 'blocks/catalog';
-@import 'blocks/reviews';
-@import 'blocks/footer';
-@import 'blocks/modal';
-@import 'blocks/pageup';
+@import "blocks/promo";
+@import "blocks/header";
+@import "blocks/buttons";
+@import "blocks/advantages";
+@import "blocks/section-heading";
+@import "blocks/consultation";
+@import "blocks/forms";
+@import "blocks/carousel";
+@import "blocks/catalog";
+@import "blocks/reviews";
+@import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/pageup";
