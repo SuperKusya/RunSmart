@@ -5,6 +5,7 @@ I created responsive HTML layout with:
 3) Slick slider
 4) Some library based animation Animate.css and WOW
 5) Pixel perfect
+6) Support IE11
 
 HTML/CSS/JS/jQuery. Used Gulp for building.
 
