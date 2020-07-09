@@ -20,7 +20,8 @@ Property text-decoration-skip-ink doesn't exist : none - Global support
 Value Error : cursor hand is not a cursor value : hand - Library Slick Slider for support old versions of IE)
 - Nu Html Checker (two errors - attribute on the iframe in Google Maps)
 
-PageSpeed Insights
+- PageSpeed Insights
+
 third-party code impact
 
 ![Screenshot](https://i.imgur.com/SQpxvo3.png)
